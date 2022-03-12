@@ -1,0 +1,195 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mvreason: <https://radx.orgx/vocs/missing-value-reason/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://radx.orgx/vocs/missing-value-reason> a skos:ConceptScheme;
+  dct:contributor <https://orcid.org/0000-0002-9381-9693>;
+  dct:creator <https://orcid.org/0000-0001-6875-5360>;
+  dct:description "List and document the reasons that can be used for missing values in the RADx systems."@en;
+  dct:title "Missing value reasons in RADx"@en;
+  pav:createdOn "2022-03-11T22:10:00-08:00"@en;
+  pav:lastUpdatedOn "2022-03-11T22:10:00-08:01"@en;
+  pav:version "0.0.1"@en;
+  skos:hasTopConcept mvreason:ReasonUnknown;
+  skos:prefLabel "Missing value reasons in RADx"@en .
+
+mvreason:ReasonUnknown a skos:Concept;
+  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
+  skos:altLabel "0"@en;
+  skos:definition "Reason for the data not being available is not known"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:narrower mvreason:NotEnteredByOriginator, mvreason:NotPresentedtoParticipant,
+    mvreason:NotSenttoDataHub;
+  skos:prefLabel "Reason Unknown"@en;
+  skos:topConceptOf <https://radx.orgx/vocs/missing-value-reason> .
+
+mvreason:NotSenttoDataHub a skos:Concept;
+  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
+  skos:altLabel "1"@en;
+  skos:broader mvreason:ReasonUnknown;
+  skos:definition "This information was not sent by the aggregator to the Data Hub"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:narrower mvreason:AnonymizationOrPrivacyConcerns, mvreason:DataInvalid, mvreason:DataLostOrInaccessible,
+    mvreason:DataTransferAgreement, mvreason:NoParticipantConsenttoShare, mvreason:NotAvailableOrMappable,
+    mvreason:OtherReasonNotSpecified;
+  skos:prefLabel "Not Sent to Data Hub"@en .
+
+mvreason:DataTransferAgreement a skos:Concept;
+  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
+  skos:altLabel "1a"@en;
+  skos:broader mvreason:NotSenttoDataHub;
+  skos:definition "data originator's data transfer agreement with project precluded sending"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Data Transfer Agreement"@en .
+
+mvreason:NoParticipantConsenttoShare a skos:Concept;
+  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
+  skos:altLabel "1b"@en;
+  skos:broader mvreason:NotSenttoDataHub;
+  skos:definition "participant did not consent to its being provided"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "No Participant Consent to Share"@en .
+
+mvreason:NotAvailableOrMappable a skos:Concept;
+  skos:altLabel "1c"@en;
+  skos:broader mvreason:NotSenttoDataHub;
+  skos:definition "not available or mappable from data source"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Not Available Or Mappable"@en .
+
+mvreason:DataLostOrInaccessible a skos:Concept;
+  skos:altLabel "1d"@en;
+  skos:broader mvreason:NotSenttoDataHub;
+  skos:definition "data lost or inaccessible (unspecified reason)"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Data Lost Or Inaccessible"@en .
+
+mvreason:DataInvalid a skos:Concept;
+  skos:altLabel "1e"@en;
+  skos:broader mvreason:NotSenttoDataHub;
+  skos:definition "data invalid (wrong format, wrong or unknown units, not parseable, impossible value)"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Data Invalid"@en .
+
+mvreason:AnonymizationOrPrivacyConcerns a skos:Concept;
+  skos:altLabel "1f"@en;
+  skos:broader mvreason:NotSenttoDataHub;
+  skos:definition "data anonymization/privacy concerns"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Anonymization Or Privacy Concerns"@en .
+
+mvreason:OtherReasonNotSpecified a skos:Concept;
+  skos:altLabel "1g"@en, "2e"@en;
+  skos:broader mvreason:NotEnteredByOriginator, mvreason:NotSenttoDataHub;
+  skos:definition "other reason not specified"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Other Reason Not Specified"@en .
+
+mvreason:NotEnteredByOriginator a skos:Concept;
+  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
+  dct:creator <https://orcid.org/0000-0002-9381-9693>;
+  skos:altLabel "2"@en;
+  skos:broader mvreason:ReasonUnknown;
+  skos:definition "This information wa not provided by the participant or sensor"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:narrower mvreason:CDEOmittedwithException, mvreason:ElementNeverCollected, mvreason:OmittedThisValue,
+    mvreason:OtherReasonNotSpecified, mvreason:RecordNotProvided;
+  skos:prefLabel "Not Entered By Originator"@en .
+
+mvreason:OmittedThisValue a skos:Concept;
+  skos:altLabel "2a"@en;
+  skos:broader mvreason:NotEnteredByOriginator;
+  skos:definition "omitted this value"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:narrower mvreason:AnswerNotKnown, mvreason:OriginatorChosetoOmit, mvreason:QuestionNotApplicable;
+  skos:prefLabel "Omitted This Value"@en .
+
+mvreason:OriginatorChosetoOmit a skos:Concept;
+  skos:altLabel "2a.i"@en;
+  skos:broader mvreason:OmittedThisValue;
+  skos:definition "chose not to answer for personal (unknown) reasons"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Originator Chose to Omit"@en .
+
+mvreason:QuestionNotApplicable a skos:Concept;
+  skos:altLabel "2a.ii"@en;
+  skos:broader mvreason:OmittedThisValue;
+  skos:definition "question deemed not applicable"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Question Not Applicable"@en .
+
+mvreason:AnswerNotKnown a skos:Concept;
+  skos:altLabel "2a.iii"@en;
+  skos:broader mvreason:OmittedThisValue;
+  skos:definition "did not know answer"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Answer Not Known"@en .
+
+mvreason:RecordNotProvided a skos:Concept;
+  skos:altLabel "2b"@en;
+  skos:broader mvreason:NotEnteredByOriginator;
+  skos:definition "omitted this row (did not provide any answers for this record)"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Record Not Provided"@en .
+
+mvreason:ElementNeverCollected a skos:Concept;
+  skos:altLabel "2c"@en, "3c"@en;
+  skos:broader mvreason:NotEnteredByOriginator, mvreason:NotPresentedtoParticipant;
+  skos:definition "column (variable) not collected"@en, "omitted this column/variable (this column/variable was not collected or could not be collected for any user"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Element Never Collected"@en .
+
+mvreason:CDEOmittedwithException a skos:Concept;
+  skos:altLabel "2d"@en;
+  skos:broader mvreason:NotEnteredByOriginator;
+  skos:definition "omitted this CDE (category) due to NIH-approved exception"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "CDE Omitted with Exception"@en .
+
+mvreason:NotPresentedtoParticipant a skos:Concept;
+  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
+  dct:creator <https://orcid.org/0000-0002-9381-9693>;
+  skos:altLabel "3"@en;
+  skos:broader mvreason:ReasonUnknown;
+  skos:definition "This question (element) was not presented to the participant"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:narrower mvreason:ElementNeverCollected, mvreason:NoParticipantConsenttoAsk,
+    mvreason:ProcessError, mvreason:SkipLogic;
+  skos:prefLabel "Not Presented to Participant"@en .
+
+mvreason:SkipLogic a skos:Concept;
+  skos:altLabel "3a"@en;
+  skos:broader mvreason:NotPresentedtoParticipant;
+  skos:definition "skip logic omits question"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Skip Logic"@en .
+
+mvreason:NoParticipantConsenttoAsk a skos:Concept;
+  skos:altLabel "3b"@en;
+  skos:broader mvreason:NotPresentedtoParticipant;
+  skos:definition "participant did not consent to its being provided"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "No Participant Consent to Ask"@en .
+
+mvreason:ProcessError a skos:Concept;
+  skos:altLabel "3d"@en;
+  skos:broader mvreason:NotPresentedtoParticipant;
+  skos:definition "process error"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Process Error"@en .
