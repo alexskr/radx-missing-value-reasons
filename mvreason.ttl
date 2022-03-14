@@ -25,7 +25,7 @@
   dct:title "Missing value reasons in RADx"@en;
   pav:createdOn "2022-03-11T22:10:00-08:00"@en;
   pav:lastUpdatedOn "2022-03-14T22:16:17-08:01"@en;
-  pav:version "0.0.2"@en;
+  pav:version "0.0.3"@en;
   skos:hasTopConcept mvreason:ReasonUnknown;
   skos:prefLabel "Missing value reasons in RADx"@en .
 
@@ -103,8 +103,8 @@ mvreason:NotEnteredByOriginator a skos:Concept;
   skos:broader mvreason:ReasonUnknown;
   skos:definition "This information was not provided by the participant or sensor"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:narrower mvreason:CDEOmittedwithException, mvreason:ElementNeverCollected, mvreason:OmittedThisValue,
-    mvreason:OtherUnenteredReasonNotSpecified, mvreason:RecordNotProvided;
+  skos:narrower mvreason:AllOriginatorsOmittedElement, mvreason:CDEOmittedwithException,
+    mvreason:OmittedThisValue, mvreason:OtherUnenteredReasonNotSpecified, mvreason:RecordNotProvided;
   skos:prefLabel "Not Entered By Originator"@en .
 
 mvreason:OmittedThisValue a skos:Concept;
@@ -143,12 +143,12 @@ mvreason:RecordNotProvided a skos:Concept;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
   skos:prefLabel "Record Not Provided"@en .
 
-mvreason:ElementNeverCollected a skos:Concept;
-  skos:altLabel "2c"@en, "3c"@en;
-  skos:broader mvreason:NotEnteredByOriginator, mvreason:NotPresentedtoParticipant;
-  skos:definition "column (variable) not presented for collection"@en, "originator omitted this column/variable (this column/variable was not collected or could not be collected for any user"@en;
+mvreason:AllOriginatorsOmittedElement a skos:Concept;
+  skos:altLabel "2c"@en;
+  skos:broader mvreason:NotEnteredByOriginator;
+  skos:definition "originator omitted this column/variable (this column/variable was not collected or could not be collected for any user"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Element Never Collected"@en .
+  skos:prefLabel "All Originators Omitted Element"@en .
 
 mvreason:CDEOmittedwithException a skos:Concept;
   skos:altLabel "2d"@en;
@@ -170,7 +170,7 @@ mvreason:NotPresentedtoParticipant a skos:Concept;
   skos:broader mvreason:ReasonUnknown;
   skos:definition "This question (element) was not presented to the participant"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:narrower mvreason:ElementNeverCollected, mvreason:NoParticipantConsenttoAsk,
+  skos:narrower mvreason:ElementNeverPresentedforCollection, mvreason:NoParticipantConsenttoAsk,
     mvreason:OtherUnpresentedReasonNotSpecified, mvreason:ProcessError, mvreason:SkipLogic;
   skos:prefLabel "Not Presented to Participant"@en .
 
@@ -187,6 +187,13 @@ mvreason:NoParticipantConsenttoAsk a skos:Concept;
   skos:definition "participant did not consent to its being provided"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
   skos:prefLabel "No Participant Consent to Ask"@en .
+
+mvreason:ElementNeverPresentedforCollection a skos:Concept;
+  skos:altLabel "3c"@en;
+  skos:broader mvreason:NotPresentedtoParticipant;
+  skos:definition "column (variable) not presented for collection"@en;
+  skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
+  skos:prefLabel "Element Never Presented for Collection"@en .
 
 mvreason:ProcessError a skos:Concept;
   skos:altLabel "3d"@en;
