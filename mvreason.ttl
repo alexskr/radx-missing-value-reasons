@@ -31,7 +31,7 @@
 
 mvreason:MissingValue-9999 a skos:Concept;
   skos:altLabel "0"@en;
-  skos:definition "The value is missing. No further explanation provided."@en;
+  skos:definition "The value is missing"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
   skos:narrower mvreason:NotEnteredByOriginator-9960, mvreason:NotPresentedtoParticipant-9940,
     mvreason:NotSenttoDataHub-9980;
