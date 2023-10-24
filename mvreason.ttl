@@ -24,193 +24,195 @@
   dct:description "List and document the reasons that can be used for missing values in the RADx systems."@en;
   dct:title "Missing value reasons in RADx"@en;
   pav:createdOn "2022-03-11T22:10:00-08:00"@en;
-  pav:lastUpdatedOn "2022-04-14T16:04:00-07:00"@en;
-  owl:versionInfo "0.2.0"@en;
-  skos:hasTopConcept mvreason:ReasonUnknown;
+  pav:lastUpdatedOn "2022-03-23T15:01:00-08:00"@en;
+  pav:version "0.0.5"@en;
+  skos:hasTopConcept mvreason:MissingValue-9999;
   skos:prefLabel "Missing value reasons in RADx"@en .
 
-mvreason:ReasonUnknown a skos:Concept;
-  skos:altLabel "-9999"@en;
-  skos:definition "Reason for the data not being available is not known"@en;
+mvreason:MissingValue-9999 a skos:Concept;
+  skos:altLabel "0"@en;
+  skos:definition "The value is missing. No further explanation provided."@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:narrower mvreason:NotEnteredByOriginator, mvreason:NotPresentedtoParticipant,
-    mvreason:NotSenttoDataHub;
-  skos:prefLabel "Reason Unknown"@en;
+  skos:narrower mvreason:NotEnteredByOriginator-9960, mvreason:NotPresentedtoParticipant-9940,
+    mvreason:NotSenttoDataHub-9980;
+  skos:prefLabel "Missing Value (-9999)"@en;
   skos:topConceptOf <https://radx.orgx/vocs/missing-value-reason> .
 
-mvreason:NotSenttoDataHub a skos:Concept;
-  skos:altLabel "-9980"@en;
-  skos:broader mvreason:ReasonUnknown;
+mvreason:NotSenttoDataHub-9980 a skos:Concept;
+  skos:altLabel "1"@en;
+  skos:broader mvreason:MissingValue-9999;
   skos:definition "This information was not sent by the data aggregator (e.g., the Data Coordination Center) to the Data Hub"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:narrower mvreason:AnonymizationOrPrivacyConcerns, mvreason:DataInvalid, mvreason:DataLostOrInaccessible,
-    mvreason:DataTransferAgreement, mvreason:NoParticipantConsenttoShare, mvreason:NotAvailableOrMappable,
-    mvreason:OtherUnsentReasonNotSpecified;
-  skos:prefLabel "Not Sent to Data Hub"@en .
+  skos:narrower mvreason:AnonymizationOrPrivacyConcerns-9986, mvreason:DataInvalid-9985,
+    mvreason:DataLostOrInaccessible-9984, mvreason:DataTransferAgreement-9981, mvreason:NoParticipantConsenttoShare-9982,
+    mvreason:NotAvailableOrMappable-9983, mvreason:OtherUnsentReasonNotSpecified-9987;
+  skos:prefLabel "Not Sent to Data Hub (-9980)"@en .
 
-mvreason:DataTransferAgreement a skos:Concept;
-  skos:altLabel "-9981"@en;
-  skos:broader mvreason:NotSenttoDataHub;
+mvreason:DataTransferAgreement-9981 a skos:Concept;
+  skos:altLabel "1a"@en;
+  skos:broader mvreason:NotSenttoDataHub-9980;
   skos:definition "Data originator's data transfer agreement with project precluded sending"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Data Transfer Agreement"@en .
+  skos:prefLabel "Data Transfer Agreement (-9981)"@en .
 
-mvreason:NoParticipantConsenttoShare a skos:Concept;
-  skos:altLabel "-9982"@en;
-  skos:broader mvreason:NotSenttoDataHub;
+mvreason:NoParticipantConsenttoShare-9982 a skos:Concept;
+  skos:altLabel "1b"@en;
+  skos:broader mvreason:NotSenttoDataHub-9980;
   skos:definition "Originator did not consent to its being provided"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "No Participant Consent To Share"@en .
+  skos:prefLabel "No Participant Consent to Share (-9982)"@en .
 
-mvreason:NotAvailableOrMappable a skos:Concept;
-  skos:altLabel "-9983"@en;
-  skos:broader mvreason:NotSenttoDataHub;
+mvreason:NotAvailableOrMappable-9983 a skos:Concept;
+  skos:altLabel "1c"@en;
+  skos:broader mvreason:NotSenttoDataHub-9980;
   skos:definition "Reason from the originator was not available or mappable"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Not Available Or Mappable"@en .
+  skos:prefLabel "Not Available Or Mappable (-9983)"@en .
 
-mvreason:DataLostOrInaccessible a skos:Concept;
-  skos:altLabel "-9984"@en;
-  skos:broader mvreason:NotSenttoDataHub;
+mvreason:DataLostOrInaccessible-9984 a skos:Concept;
+  skos:altLabel "1d"@en;
+  skos:broader mvreason:NotSenttoDataHub-9980;
   skos:definition "Data was lost or inaccessible (unspecified reason)"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Data Lost Or Inaccessible"@en .
+  skos:prefLabel "Data Lost Or Inaccessible (-9984)"@en .
 
-mvreason:DataInvalid a skos:Concept;
-  skos:altLabel "-9985"@en;
-  skos:broader mvreason:NotSenttoDataHub;
+mvreason:DataInvalid-9985 a skos:Concept;
+  skos:altLabel "1e"@en;
+  skos:broader mvreason:NotSenttoDataHub-9980;
   skos:definition "Data was invalid (wrong format, wrong or unknown units, not parseable, or impossible value)"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Data Invalid"@en .
+  skos:prefLabel "Data Invalid (-9985)"@en .
 
-mvreason:AnonymizationOrPrivacyConcerns a skos:Concept;
-  skos:altLabel "-9986"@en;
-  skos:broader mvreason:NotSenttoDataHub;
+mvreason:AnonymizationOrPrivacyConcerns-9986 a skos:Concept;
+  skos:altLabel "1f"@en;
+  skos:broader mvreason:NotSenttoDataHub-9980;
   skos:definition "Data had anonymization/privacy concerns"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Anonymization Or Privacy Concerns"@en .
+  skos:prefLabel "Anonymization Or Privacy Concerns (-9986)"@en .
 
-mvreason:OtherUnsentReasonNotSpecified a skos:Concept;
-  skos:altLabel "-9987"@en;
-  skos:broader mvreason:NotSenttoDataHub;
+mvreason:OtherUnsentReasonNotSpecified-9987 a skos:Concept;
+  skos:altLabel "1g"@en;
+  skos:broader mvreason:NotSenttoDataHub-9980;
   skos:definition "Data was not sent to Data Hub for some reason not specified"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Other Unsent Reason Not Specified"@en .
+  skos:prefLabel "Other Unsent Reason Not Specified (-9987)"@en .
 
-mvreason:NotEnteredByOriginator a skos:Concept;
-  skos:altLabel "-9960"@en;
-  skos:broader mvreason:ReasonUnknown;
+mvreason:NotEnteredByOriginator-9960 a skos:Concept;
+  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
+  skos:altLabel "2"@en;
+  skos:broader mvreason:MissingValue-9999;
   skos:definition "This information was not provided by the originator (participant or sensor)"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:narrower mvreason:AllOriginatorsOmittedElement, mvreason:CDEOmittedwithException,
-    mvreason:OmittedThisValue, mvreason:OtherUnenteredReasonNotSpecified, mvreason:RecordNotProvided;
-  skos:prefLabel "Not Entered By Originator"@en .
+  skos:narrower mvreason:AllOriginatorsOmittedElement-9966, mvreason:CDEOmittedwithException-9967,
+    mvreason:OmittedThisValue-9961, mvreason:OtherUnenteredReasonNotSpecified-9968, mvreason:RecordNotProvided-9965;
+  skos:prefLabel "Not Entered By Originator (-9960)"@en .
 
-mvreason:OmittedThisValue a skos:Concept;
-  skos:altLabel "-9961"@en;
-  skos:broader mvreason:NotEnteredByOriginator;
-  skos:definition "Originator omitted this particular value. (If column, record, or CDE omitted *by the user*, use code for All Originators Omitted Element, Record Not Provied, or CDE Omitted with Exception, respectively.)"@en;
+mvreason:OmittedThisValue-9961 a skos:Concept;
+  skos:altLabel "2a"@en;
+  skos:broader mvreason:NotEnteredByOriginator-9960;
+  skos:definition "Originator omitted this particular value. (If column, record, or CDE omitted *by the user*, choose that appropriate term here.)"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:narrower mvreason:AnswerNotKnown, mvreason:OriginatorChosetoOmit, mvreason:QuestionNotApplicable;
-  skos:prefLabel "Omitted This Value"@en .
+  skos:narrower mvreason:AnswerNotKnown-9964, mvreason:OriginatorChosetoOmit-9962, mvreason:QuestionNotApplicable-9963;
+  skos:prefLabel "Omitted This Value (-9961)"@en .
 
-mvreason:OriginatorChosetoOmit a skos:Concept;
-  skos:altLabel "-9962"@en;
-  skos:broader mvreason:OmittedThisValue;
+mvreason:OriginatorChosetoOmit-9962 a skos:Concept;
+  skos:altLabel "2a.i"@en;
+  skos:broader mvreason:OmittedThisValue-9961;
   skos:definition "Originator chose not to answer for personal reasons (unknown to data collector)"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Originator Chose to Omit"@en .
+  skos:prefLabel "Originator Chose to Omit (-9962)"@en .
 
-mvreason:QuestionNotApplicable a skos:Concept;
-  skos:altLabel "-9963"@en;
-  skos:broader mvreason:OmittedThisValue;
+mvreason:QuestionNotApplicable-9963 a skos:Concept;
+  skos:altLabel "2a.ii"@en;
+  skos:broader mvreason:OmittedThisValue-9961;
   skos:definition "Originator deemed the question not applicable"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Question Not Applicable"@en .
+  skos:prefLabel "Question Not Applicable (-9963)"@en .
 
-mvreason:AnswerNotKnown a skos:Concept;
-  skos:altLabel "-9964"@en;
-  skos:broader mvreason:OmittedThisValue;
+mvreason:AnswerNotKnown-9964 a skos:Concept;
+  skos:altLabel "2a.iii"@en;
+  skos:broader mvreason:OmittedThisValue-9961;
   skos:definition "Originator did not know the answer"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Answer Not Known"@en .
+  skos:prefLabel "Answer Not Known (-9964)"@en .
 
-mvreason:RecordNotProvided a skos:Concept;
-  skos:altLabel "-9965"@en;
-  skos:broader mvreason:NotEnteredByOriginator;
+mvreason:RecordNotProvided-9965 a skos:Concept;
+  skos:altLabel "2b"@en;
+  skos:broader mvreason:NotEnteredByOriginator-9960;
   skos:definition "Originator omitted this row (did not provide any answers for this record)"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Record Not Provided"@en .
+  skos:prefLabel "Record Not Provided (-9965)"@en .
 
-mvreason:AllOriginatorsOmittedElement a skos:Concept;
-  skos:altLabel "-9966"@en;
-  skos:broader mvreason:NotEnteredByOriginator;
+mvreason:AllOriginatorsOmittedElement-9966 a skos:Concept;
+  skos:altLabel "2c"@en;
+  skos:broader mvreason:NotEnteredByOriginator-9960;
   skos:definition "Originator omitted this column/variable (this column/variable was not collected or could not be collected for any user"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "All Originators Omitted Element"@en .
+  skos:prefLabel "All Originators Omitted Element (-9966)"@en .
 
-mvreason:CDEOmittedwithException a skos:Concept;
-  skos:altLabel "-9967"@en;
-  skos:broader mvreason:NotEnteredByOriginator;
+mvreason:CDEOmittedwithException-9967 a skos:Concept;
+  skos:altLabel "2d"@en;
+  skos:broader mvreason:NotEnteredByOriginator-9960;
   skos:definition "Originator omitted this CDE (category) due to NIH-approved exception"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "CDE Omitted With Exception"@en .
+  skos:prefLabel "CDE Omitted with Exception (-9967)"@en .
 
-mvreason:OtherUnenteredReasonNotSpecified a skos:Concept;
-  skos:altLabel "-9968"@en;
-  skos:broader mvreason:NotEnteredByOriginator;
+mvreason:OtherUnenteredReasonNotSpecified-9968 a skos:Concept;
+  skos:altLabel "2e"@en;
+  skos:broader mvreason:NotEnteredByOriginator-9960;
   skos:definition "Originator did not provide data for some other reason"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Other Unentered Reason Not Specified"@en .
+  skos:prefLabel "Other Unentered Reason Not Specified (-9968)"@en .
 
-mvreason:NotPresentedtoParticipant a skos:Concept;
-  skos:altLabel "-9940"@en;
-  skos:broader mvreason:ReasonUnknown;
+mvreason:NotPresentedtoParticipant-9940 a skos:Concept;
+  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
+  skos:altLabel "3"@en;
+  skos:broader mvreason:MissingValue-9999;
   skos:definition "This question (element) was not presented to the participant"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:narrower mvreason:CDENotPresentedDuetoException, mvreason:ElementNeverPresentedforCollection,
-    mvreason:NoParticipantConsenttoAsk, mvreason:OtherUnpresentedReasonNotSpecified, mvreason:ProcessError,
-    mvreason:SkipLogic;
-  skos:prefLabel "Not Presented To Participant"@en .
+  skos:narrower mvreason:CDENotPresentedDuetoException-9943, mvreason:ElementNeverPresentedforCollection-9944,
+    mvreason:NoParticipantConsenttoAsk-9942, mvreason:OtherUnpresentedReasonNotSpecified-9946,
+    mvreason:ProcessError-9945, mvreason:SkipLogic-9941;
+  skos:prefLabel "Not Presented to Participant (-9940)"@en .
 
-mvreason:SkipLogic a skos:Concept;
-  skos:altLabel "-9941"@en;
-  skos:broader mvreason:NotPresentedtoParticipant;
+mvreason:SkipLogic-9941 a skos:Concept;
+  skos:altLabel "3a"@en;
+  skos:broader mvreason:NotPresentedtoParticipant-9940;
   skos:definition "Skip logic in the form or directions caused the question to not be presented"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Skip Logic"@en .
+  skos:prefLabel "Skip Logic (-9941)"@en .
 
-mvreason:NoParticipantConsenttoAsk a skos:Concept;
-  skos:altLabel "-9942"@en;
-  skos:broader mvreason:NotPresentedtoParticipant;
+mvreason:NoParticipantConsenttoAsk-9942 a skos:Concept;
+  skos:altLabel "3b"@en;
+  skos:broader mvreason:NotPresentedtoParticipant-9940;
   skos:definition "Originator did not provide consent for question to be asked"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "No Participant Consent to Ask"@en .
+  skos:prefLabel "No Participant Consent to Ask (-9942)"@en .
 
-mvreason:CDENotPresentedDuetoException a skos:Concept;
-  skos:altLabel "-9943"@en;
-  skos:broader mvreason:NotPresentedtoParticipant;
+mvreason:CDENotPresentedDuetoException-9943 a skos:Concept;
+  skos:altLabel "3c"@en;
+  skos:broader mvreason:NotPresentedtoParticipant-9940;
   skos:definition "The CDE (or element of the CDE) was not presented due to CDE exception"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "CDE Not Presented Due to Exception"@en .
+  skos:prefLabel "CDE Not Presented Due to Exception (-9943)"@en .
 
-mvreason:ElementNeverPresentedforCollection a skos:Concept;
-  skos:altLabel "-9944"@en;
-  skos:broader mvreason:NotPresentedtoParticipant;
+mvreason:ElementNeverPresentedforCollection-9944 a skos:Concept;
+  skos:altLabel "3d"@en;
+  skos:broader mvreason:NotPresentedtoParticipant-9940;
   skos:definition "This element (question or variable) was not presented to user for collection (reason unspecified)"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Element Never Presented for Collection"@en .
+  skos:prefLabel "Element Never Presented for Collection (-9944)"@en .
 
-mvreason:ProcessError a skos:Concept;
-  skos:altLabel "-9945"@en;
-  skos:broader mvreason:NotPresentedtoParticipant;
+mvreason:ProcessError-9945 a skos:Concept;
+  skos:altLabel "3e"@en;
+  skos:broader mvreason:NotPresentedtoParticipant-9940;
   skos:definition "A processing error caused the question to not be presented"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Process Error"@en .
+  skos:prefLabel "Process Error (-9945)"@en .
 
-mvreason:OtherUnpresentedReasonNotSpecified a skos:Concept;
-  skos:altLabel "-9946"@en;
-  skos:broader mvreason:NotPresentedtoParticipant;
+mvreason:OtherUnpresentedReasonNotSpecified-9946 a skos:Concept;
+  skos:altLabel "3f"@en;
+  skos:broader mvreason:NotPresentedtoParticipant-9940;
   skos:definition "Question was not presented for some reason not specified"@en;
   skos:inScheme <https://radx.orgx/vocs/missing-value-reason>;
-  skos:prefLabel "Other Unpresented Reason Not Specified"@en .
+  skos:prefLabel "Other Unpresented Reason Not Specified (-9946)"@en .
