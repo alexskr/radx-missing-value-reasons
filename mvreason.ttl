@@ -24,8 +24,8 @@
   dct:description "List and document the reasons that can be used for missing values in the RADx systems."@en;
   dct:title "Missing value reasons in RADx"@en;
   pav:createdOn "2022-03-11T22:10:00-08:00"@en;
-  pav:lastUpdatedOn "2022-03-23T15:01:00-08:00"@en;
-  pav:version "0.0.5"@en;
+  pav:lastUpdatedOn "2024-01-12T15:01:00-08:00"@en;
+  pav:version "0.2.0"@en;
   skos:hasTopConcept mvreason:MissingValue-9999;
   skos:prefLabel "Missing value reasons in RADx"@en .
 
